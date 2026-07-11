@@ -581,6 +581,119 @@
         padding: 12px 16px;
       }
     }
+
+    /* Detail Section Styles */
+    .detail-section {
+      padding: 80px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .detail-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      margin-top: 40px;
+    }
+    
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    
+    .detail-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .detail-content {
+      flex: 1.2;
+    }
+    
+    .detail-visual {
+      flex: 0.8;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(5, 10, 18, 0.3);
+      position: relative;
+    }
+    
+    .detail-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    
+    .detail-title {
+      font-size: 26px;
+      margin-bottom: 16px;
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .detail-desc {
+      color: var(--text-sub);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+    
+    .feature-icon-bullet {
+      color: var(--accent-cyan);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+    
+    .visual-header {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .visual-key {
+      font-family: monospace;
+      background: #1e293b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: var(--accent-cyan);
+    }
+
+    @media (max-width: 992px) {
+      .detail-row, .detail-row:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .detail-visual {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -595,9 +708,9 @@
       <nav>
         <ul>
           <li><a href="#fitur">Fitur Utama</a></li>
+          <li><a href="#detail-fitur">Penjelasan Detail</a></li>
           <li><a href="#darkmode">Mode Gelap</a></li>
           <li><a href="#shortcut">Shortcut</a></li>
-          <li><a href="#kelebihan">Keamanan</a></li>
         </ul>
       </nav>
     </div>
@@ -703,6 +816,145 @@
         </div>
         <h3>Smart Prefetch & Dynamic Cache</h3>
         <p>Secara otomatis memuat sub-catatan Buku Tanah di latar belakang. Kueri data POST di-cache secara dinamis dengan body hashing terurut (mengabaikan CSRF Token) dan fitur pembersihan cache instan jika terdeteksi mutasi data.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Penjelasan Detail Fitur -->
+  <section id="detail-fitur" class="container detail-section">
+    <div class="section-title">
+      <h2>Penjelasan Mendalam Fitur Unggulan</h2>
+      <p>Pelajari bagaimana fitur-fitur taktis Aterra SC mempermudah pekerjaan harian Anda tanpa menyentuh kode program.</p>
+    </div>
+
+    <div class="detail-grid">
+      
+      <!-- Detail 1: Speed Booster v2 -->
+      <div class="detail-row">
+        <div class="detail-content">
+          <span class="detail-tag">AKSELERASI JARINGAN</span>
+          <h3 class="detail-title">Akselerasi Pemuatan Catatan & Peralihan 0ms</h3>
+          <p class="detail-desc">Sistem akselerasi pintar yang dirancang untuk memotong delay jaringan BPN secara menyeluruh. Begitu halaman dokumen dibuka, data catatan terunduh di latar belakang sebelum Anda mengkliknya.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Smart Background Prefetch:</b> Kueri detail catatan disapu dan diunduh di latar belakang saat detail dokumen terbuka.</span>
+            </li>
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Dynamic Memory Cache:</b> Menyimpan kueri POST dinamis Buku Tanah/Surat Ukur dengan TTL 30 detik untuk respon instan.</span>
+            </li>
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>TCP Fast Open & GC 2GB Heap:</b> Mempercepat koneksi awal handshake SSL dan mencegah stuttering rendering Kendo UI.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="detail-visual">
+          <div class="visual-header">
+            <span>PERFORMA LOAD KENDO UI</span>
+            <span class="visual-key">SPEED BOOST V2</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; justify-content:space-between; font-size:12px; opacity:0.8;">
+              <span>Pemuatan Halaman Catatan BPN</span>
+              <span style="color:var(--accent-cyan); font-weight:700;">Instan &lt; 5ms</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); height:8px; border-radius:4px; overflow:hidden;">
+              <div style="background:var(--accent-cyan); width:100%; height:100%; box-shadow:0 0 10px var(--accent-cyan);"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:12px; opacity:0.8; margin-top:8px;">
+              <span>Delay Peta Bidang / DI-307</span>
+              <span style="color:var(--accent-cyan); font-weight:700;">Handshake TCP 0ms</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); height:8px; border-radius:4px; overflow:hidden;">
+              <div style="background:var(--accent-blue); width:100%; height:100%; box-shadow:0 0 10px var(--accent-blue);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail 2: Multi-Profile Autofill -->
+      <div class="detail-row">
+        <div class="detail-content">
+          <span class="detail-tag">PRODUKTIVITAS KERJA</span>
+          <h3 class="detail-title">Sistem Perekaman Multi-Profil & Multi-Formulir</h3>
+          <p class="detail-desc">Autofill Aterra dirancang khusus agar Anda dapat merekam dan mengelola profil isian dokumen secara cerdas berdasarkan jenis formulir dan data petugas pertanahan yang berbeda.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Profil Petugas Berbeda:</b> Simpan data biodata login SSO kementerian untuk banyak petugas dan ganti secara bergiliran.</span>
+            </li>
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Pengisian Formulir Otomatis:</b> Bekerja pada formulir Buku Tanah, Surat Ukur, entri data, dsb., lalu isi data secara berulang.</span>
+            </li>
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Kontrol Keyboard Instan:</b> Rekam formulir aktif ke profil lewat <span class="kbd">Alt+Shift+S</span> dan ganti profil lewat <span class="kbd">Alt+Shift+P</span>.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="detail-visual" style="border-color: rgba(16, 185, 129, 0.2); margin-top: 0;">
+          <div class="visual-header">
+            <span>DAFTAR PROFIL AKTIF</span>
+            <span class="visual-key" style="color:var(--accent-green);">PROFILE FILLER</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="padding:10px; border-radius:6px; background:rgba(16, 185, 129, 0.1); border:1px solid rgba(16, 185, 129, 0.2); font-size:12px; display:flex; justify-content:space-between; align-items:center;">
+              <span>👤 Profil 1: Petugas Buku Tanah (Hak Milik)</span>
+              <span style="font-size:10px; color:var(--accent-green); font-weight:700;">AKTIF</span>
+            </div>
+            <div style="padding:10px; border-radius:6px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); font-size:12px; opacity:0.6; display:flex; justify-content:space-between; align-items:center;">
+              <span>👤 Profil 2: Petugas Surat Ukur (SU)</span>
+              <span style="font-size:10px; font-weight:700;">STANDBY</span>
+            </div>
+            <div style="padding:10px; border-radius:6px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); font-size:12px; opacity:0.6; display:flex; justify-content:space-between; align-items:center;">
+              <span>👤 Profil 3: Akun SSO Mitra A</span>
+              <span style="font-size:10px; font-weight:700;">STANDBY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail 3: Double Cleaner -->
+      <div class="detail-row">
+        <div class="detail-content">
+          <span class="detail-tag">AKSI DOKUMEN</span>
+          <h3 class="detail-title">Pembersihan Entri DI Ganda Multi-Mode</h3>
+          <p class="detail-desc">Mencegah kesalahan double input yang sering kali terjadi di sistem BPN dengan dua mode pembersihan baris tabel Daftar Isian (DI) yang duplikat secara pintar.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Hapus Semua Duplikat (Alt+D):</b> Membersihkan seluruh baris entri yang terdeteksi memiliki data ganda secara instan.</span>
+            </li>
+            <li class="feature-item">
+              <svg class="feature-icon-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Sisakan Satu Baris (Alt+E):</b> Menghapus kelebihan duplikasi baris tambahan dan menyisakan tepat 1 baris entri asli untuk diproses.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="detail-visual">
+          <div class="visual-header">
+            <span>DOKUMEN DAFTAR ISIAN (DI)</span>
+            <span class="visual-key">DI-CLEANER</span>
+          </div>
+          <div style="font-size:12px; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; justify-content:space-between; opacity:0.5; text-decoration: line-through;">
+              <span>📄 DI-208: Duplikat Baris 2</span>
+              <span>Dihapus</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; opacity:0.5; text-decoration: line-through;">
+              <span>📄 DI-208: Duplikat Baris 3</span>
+              <span>Dihapus</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--accent-cyan); font-weight:700;">
+              <span>📄 DI-208: Entri Asli Utama</span>
+              <span>Tersisa 1</span>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
