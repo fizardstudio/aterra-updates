@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aterra Browser - Dokumentasi Fitur & Produktivitas ATR/BPN</title>
-  <meta name="description" content="Dokumentasi resmi Aterra Browser v2.1.3. Dilengkapi Speed Booster, Mode Gelap Pintar, Pencegat Forensik Telemetri, dan 2 Mode Hapus DI Ganda.">
+  <meta name="description" content="Dokumentasi resmi Aterra Browser v2.1.4. Dilengkapi Speed Booster (Preconnect, TCP Fast Open, V8 Heap 2GB), Smart Background Prefetch, Mode Gelap Pintar, Pencegat Forensik Telemetri, dan 2 Mode Hapus DI Ganda.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -608,7 +608,7 @@
     <div class="container">
       <div class="version-tag">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="animation: pulse 2s infinite;"><circle cx="12" cy="12" r="10"/></svg>
-        TERSEDIA VERSI 2.1.3 (RILIS LOKAL)
+        TERSEDIA VERSI 2.1.4 (SPEED BOOSTER V2 LOKAL)
       </div>
       <h1>Browser Akselerasi & Produktivitas Kerja</h1>
       <p>Browser kustom super ringan yang dirancang khusus untuk memotong delay jaringan kementerian, mengamankan privasi dari tracker, dan mempercepat input dokumen kementerian ATR/BPN.</p>
@@ -636,7 +636,7 @@
           </svg>
         </div>
         <h3>Speed Booster Akselerasi</h3>
-        <p>Dilengkapi static asset caching agresif, caching biner wilayah BPN (/getwilayah) instan 0ms dari RAM, DNS cache bypass Windows, dan Keep-Alive connection tuning untuk memangkas delay handshake SSL.</p>
+        <p>Dilengkapi static asset caching agresif, caching biner wilayah BPN (/getwilayah) instan 0ms dari RAM, DNS cache bypass Windows, preconnect domain CDN esensial, TCP Fast Open Chromium, dan Keep-Alive connection tuning untuk memangkas delay handshake SSL.</p>
       </div>
 
       <!-- Card 2: 2 Mode DI Ganda -->
@@ -692,6 +692,17 @@
         </div>
         <h3>Desain Window Modern</h3>
         <p>Dilengkapi interface frameless minimalis, visual progress bar download rilis hot-update yang mulus, dan pemilah memori Chromium terisolasi guna menjaga kestabilan browser dari resiko lag.</p>
+      </div>
+
+      <!-- Card 7: Smart Prefetch & Dynamic Cache -->
+      <div class="card" style="border-color: rgba(0, 242, 254, 0.35);">
+        <div class="card-icon" style="background: rgba(0, 242, 254, 0.1); color: var(--accent-cyan);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3>Smart Prefetch & Dynamic Cache</h3>
+        <p>Secara otomatis memuat sub-catatan Buku Tanah di latar belakang. Kueri data POST di-cache secara dinamis dengan body hashing terurut (mengabaikan CSRF Token) dan fitur pembersihan cache instan jika terdeteksi mutasi data.</p>
       </div>
 
     </div>
